@@ -129,7 +129,7 @@ const App: React.FC = () => {
             }
             if (iah < 5) {
                 return {
-                    title: `Résultat TROS ${typeText}: SAHOS léger (IAH &lt; 5)`,
+                    title: `Résultat TROS ${typeText}: SAHOS léger (IAH inférieur à 5)`,
                     primaryAction: "Prise en charge de la cause sous-jacente et surveillance",
                     primaryActionColor: 'green',
                     explanation: "Le SAHOS est léger. La priorité est la prise en charge de l'obésité ou de la pathologie associée.",
@@ -139,7 +139,7 @@ const App: React.FC = () => {
             }
             const primaryAction = "Chirurgie ORL et/ou Pression Positive Continue (PPC) à discuter";
             return {
-                title: `Résultat TROS ${typeText}: SAHOS ${iah < 10 ? 'modéré (IAH 5-10)' : 'sévère (IAH &gt; 10)'}`,
+                title: `Résultat TROS ${typeText}: SAHOS ${iah < 10 ? 'modéré (IAH 5-10)' : 'sévère (IAH supérieur à 10)'}`,
                 primaryAction,
                 primaryActionColor: 'amber',
                 explanation: `Le SAHOS est significatif. Une discussion en milieu spécialisé est nécessaire pour décider de la meilleure stratégie entre chirurgie, PPC, ou les deux.`,
@@ -178,7 +178,7 @@ const App: React.FC = () => {
         // TROS 1 Atypical with IAH results
         if (iah < 2) {
             return {
-                title: "Résultat TROS Type 1: Pas de SAHOS significatif (IAH &lt; 2)",
+                title: "Résultat TROS Type 1: Pas de SAHOS significatif (IAH inférieur à 2)",
                 primaryAction: "Surveillance et recherche d'une autre cause aux symptômes",
                 primaryActionColor: 'green',
                 explanation: "L'examen du sommeil n'objective pas de trouble respiratoire obstructif significatif. Les symptômes peuvent être liés à un ronflement simple ou une autre pathologie.",
@@ -198,12 +198,12 @@ const App: React.FC = () => {
         }
         // IAH >= 5
         return {
-            title: `Résultat TROS Type 1: SAHOS ${iah < 10 ? 'modéré (IAH 5-10)' : 'sévère (IAH &gt; 10)'}`,
+            title: `Résultat TROS Type 1: SAHOS ${iah < 10 ? 'modéré (IAH 5-10)' : 'sévère (IAH supérieur à 10)'}`,
             primaryAction: "Chirurgie ORL (Adéno-amygdalectomie) recommandée",
             primaryActionColor: 'amber',
             explanation: `L'examen du sommeil confirme un SAHOS ${iah < 10 ? 'modéré' : 'sévère'}. L'adéno-amygdalectomie est le traitement de choix pour lever l'obstruction.`,
             alternatives: ["Traitement orthodontique (disjonction maxillaire) si palais étroit.", "Rééducation oro-maxillo-faciale en cas de respiration buccale."],
-            followUp: `Consultation ORL de contrôle 2 à 6 mois post-opératoire. Une PSG/PG de contrôle peut être discutée en cas de persistance des symptômes, notamment si des facteurs de risque persistent (âge &gt; 7 ans, asthme sévère, IAH préop &gt; 10).`
+            followUp: `Consultation ORL de contrôle 2 à 6 mois post-opératoire. Une PSG/PG de contrôle peut être discutée en cas de persistance des symptômes, notamment si des facteurs de risque persistent (âge supérieur à 7 ans, asthme sévère, IAH préop supérieur à 10).`
         };
 
     }, [patientData, trosType]);

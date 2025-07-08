@@ -1,9 +1,9 @@
 
+
 import React from 'react';
 import { Recommendation as RecType, PatientData } from '../types';
 import { CheckIcon, InfoIcon } from '../constants';
 import IahInput from './IahInput';
-import GeminiSummary from './GeminiSummary';
 
 interface RecommendationProps {
     recommendation: RecType | null;
@@ -84,8 +84,6 @@ const Recommendation: React.FC<RecommendationProps> = ({ recommendation, patient
                  <IahInput onIahSubmit={handleIahSubmit} />
             )}
             
-            <GeminiSummary patientData={patientData} recommendation={recommendation} />
-
             <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8">
                 <div className="text-center">
                     <button
