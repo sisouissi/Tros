@@ -1,0 +1,6 @@
+{
+  "name": "Aide à la Décision des TROS de l'enfant",
+  "description": "Une application web pour guider les professionnels de santé dans le diagnostic, le traitement et le suivi des troubles respiratoires obstructifs du sommeil (TROS) chez l'enfant, basée sur les dernières recommandations scientifiques.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
